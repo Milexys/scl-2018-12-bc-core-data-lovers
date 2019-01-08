@@ -18,3 +18,22 @@ const showPokemon = (data) =>{
         });
     return card;
 }
+
+selectType.addEventListener("change", () => {
+    let condition = document.getElementById("select").value;
+    let filterResult = filterPokemon(data, condition);
+    container.innerHTML = "";
+    filterResult.forEach(element => {
+        container.innerHTML +=
+        `<div class="row">
+        <div class="col s12 m6 ">
+            <div class = "card">
+                <h4 class="name">${element.name}</h4>
+                <p class="number">ID: ${element.num}</p>
+                <img class="image" src="${element.img}"/>
+                <div class="Type">${element.type.join('-')}</div>
+            </div>
+        </div>
+    </div>`;
+    })
+});
