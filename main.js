@@ -1,5 +1,6 @@
 const data = POKEMON.pokemon;
 const container = document.getElementById("root");
+const selectType = document.getElementById("select");
 
 const showPokemon = (data) =>{
     let card= '';
@@ -37,3 +38,4 @@ selectType.addEventListener("change", () => {
     </div>`;
     })
 });
+window.onload = showPokemon(data);
