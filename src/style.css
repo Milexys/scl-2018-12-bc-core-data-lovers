@@ -1,0 +1,26 @@
+body{
+    background: #FBFCC8;
+}
+.banner{
+    border-radius: 15px;
+}
+.select{
+    width: auto;
+    display: block;
+}
+.row{
+    display: inline-block;
+}
+.card{
+    text-align: center;
+    width: 240px;
+    height: 261px;
+    margin: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+.card h4{
+    width: 240px;
+    height: 40px;
+    background: #69FF66;
+}
