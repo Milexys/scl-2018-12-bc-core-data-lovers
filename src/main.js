@@ -1,29 +1,28 @@
-const data = POKEMON.pokemon;
+const data = window.POKEMON.pokemon;
 const container = document.getElementById("root");
 const selectType = document.getElementById("select");
-const selectOrder = document.getElementById("selectOrder");
 
 const showPokemon = (data) =>{
     let card= '';
     data.forEach(element => { 
         card = container.innerHTML += 
-        `<div class="row">
-            <div class="col s12 m6 ">
-                <div class = "card">
-                    <h4 class="name">${element.name}</h4>
-                    <p class="number">ID: ${element.num}</p>
-                    <img class="image" src="${element.img}"/>
-                    <div class="Type">${element.type.join('-')}</div>
+        ` <div class="row">
+                <div class="col s12 m6 ">
+                    <div class = "card">
+                        <h4 class="name">${element.name}</h4>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="image" src="${element.img}"/>
+                        <div class="Type">${element.type.join('-')}</div>
+                    </div>
                 </div>
-            </div>
-        </div>`;
+            </div>`;
         });
     return card;
 }
 
 selectType.addEventListener("change", () => {
-    let condition = document.getElementById("select").value;
-    let filterResult = filterPokemon(data, condition);
+    let condition = selectType.value;
+    let filterResult = window.pokemones.filterPokemon(data, condition);
     container.innerHTML = "";
     filterResult.forEach(element => {
         container.innerHTML +=
@@ -42,7 +41,7 @@ selectType.addEventListener("change", () => {
 
 document.getElementById("selectOrder").addEventListener("change", () =>{
     let sortOrder = document.getElementById("selectOrder").value;
-    let orderResult = orderPokemon(data);
+    let orderResult = window.pokemones.orderPokemon(data);
     if (sortOrder === "az") {
         container.innerHTML = "";
         orderResult.forEach(element=>{
@@ -61,7 +60,7 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
     }
     else if (sortOrder === "za"){
         container.innerHTML = "";
-        let orderDesc = orderPokemon(data);
+        let orderDesc = window.pokemones.orderPokemon(data);
         let orderResult = orderDesc.reverse();
         orderResult.forEach(element=>{
             container.innerHTML +=
