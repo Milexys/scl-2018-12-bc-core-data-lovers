@@ -11,7 +11,7 @@ const showPokemon = (data) =>{
                     <div class = "card">
                         <h4 class="name">${element.name}</h4>
                         <p class="number">ID: ${element.num}</p>
-                        <img class="image" src="${element.img}"/>
+                        <img class="responsive-img" src="${element.img}"/>
                         <div class="Type">${element.type.join('-')}</div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ selectType.addEventListener("change", () => {
             <div class = "card">
                 <h4 class="name">${element.name}</h4>
                 <p class="number">ID: ${element.num}</p>
-                <img class="image" src="${element.img}"/>
+                <img class="responsive-img" src="${element.img}"/>
                 <div class="Type">${element.type.join('-')}</div>
             </div>
         </div>
@@ -52,7 +52,7 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
             <div class = "card">
                 <h4 class="name">${element.name}</h4>
                 <p class="number">ID: ${element.num}</p>
-                <img class="image" src="${element.img}"/>
+                <img class="responsive-img" src="${element.img}"/>
                 <div class="Type">${element.type.join('-')}</div>
             </div>
         </div>
@@ -70,7 +70,7 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
             <div class = "card">
                 <h4 class="name">${element.name}</h4>
                 <p class="number">ID: ${element.num}</p>
-                <img class="image" src="${element.img}"/>
+                <img class="responsive-img" src="${element.img}"/>
                 <div class="Type">${element.type.join('-')}</div>
             </div>
         </div>
