@@ -1,7 +1,6 @@
 global.window = global;
 global.assert = require('chai').assert;
-require('data.spec.js');
-require('..src/data/pokemon/pokemon.js');
+require('../src/data/pokemon/pokemon.js');
 require('../src/data.js');
 
 describe('POKEMON.pokemon', () => {
@@ -10,5 +9,14 @@ describe('POKEMON.pokemon', () => {
   });
 });
 
+describe('POKEMON.pokemon.filterPokemon', () => {
+  it('it should be a function', ()=> {
+    expect(typeof window.pokemones.filterPokemon).toBe('function');
+  });
+  it('it should return arrays with a condition type Water', () => {
+    expect(window.pokemones.filterPokemon(POKEMON.pokemon, "Water")[0].name).toEqual('Squirtle');
+  });
+  
+});
 
  
