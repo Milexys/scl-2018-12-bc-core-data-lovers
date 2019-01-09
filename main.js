@@ -41,8 +41,9 @@ selectType.addEventListener("change", () => {
 
 document.getElementById("selectOrder").addEventListener("change", () =>{
     let sortOrder = document.getElementById("selectOrder").value;
-    let orderResult = window.pokemones.orderPokemon(data);
-    if (sortOrder === "az") {
+    if (sortOrder === "az" || sortOrder ==="za") {
+        let sortBy ="name";
+        let orderResult = window.pokemones.orderPokemon(data, sortBy, sortOrder);
         container.innerHTML = "";
         orderResult.forEach(element=>{
             container.innerHTML +=
@@ -58,10 +59,10 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
     </div>`;
         });
     }
-    else if (sortOrder === "za"){
+    else if (sortOrder === "small-big" || sortOrder === "big-small"){
+        let sortBy ="num";
+        let orderResult = window.pokemones.orderPokemon(data, sortBy, sortOrder);
         container.innerHTML = "";
-        let orderDesc = window.pokemones.orderPokemon(data);
-        let orderResult = orderDesc.reverse();
         orderResult.forEach(element=>{
             container.innerHTML +=
         `<div class="row">
