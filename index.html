@@ -6,16 +6,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
-  <div class="container">
     <body>
-      <header>
-        <img class="banner" src="../src/css/Banner Pokemon.png">
-      </header>
+      <div class="container">
+        <header>
+          <img class="banner" src="../src/css/Banner Pokemon.png">
+        </header>
 
-      <aside class=aside>
-        <div class=menuType>
+        <aside class="aside">
+          <div class="menuType">
           <select id="select" class="select">
-              <option value=0>Seleccionar</option>
+              <option value="0">Seleccionar</option>
               <option value="Water">Agua</option>
               <option value="Bug">Bicho</option>
               <option value="Dragon">Dragón</option>
@@ -33,24 +33,25 @@
               <option value="Flying">Volador</option>
           </select> <br>
           <select id="selectOrder" class="select">
-              <option value=0>Seleccionar</option>
+              <option value="0">Seleccionar</option>
               <option value="az">Ordenar A-Z</option>
               <option value="za">Ordenar Z-A</option>
               <option value="small-big">Ordenar 1-151</option>
               <option value="big-small">Ordenar 151-1</option>
           </select>
         </div>
-      </aside>
+        </aside>
 
-      <article class="article">
-        <div id="root"></div>
-      </article>
-      <footer></footer>
+        <article class="article">
+          <div id="root"></div>
+        </article>
+        <footer></footer>
     
       <script src="./data/pokemon/pokemon.js"></script>
       <script src="data.js"></script>
       <script src="main.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </div>
+      </div>
   </body>
+  
 </html>
