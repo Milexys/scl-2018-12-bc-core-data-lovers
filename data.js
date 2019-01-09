@@ -31,7 +31,7 @@ orderPokemon: (data, sortBy, sortOrder) => {
                 return -1;
             }
             return 0;
-        })
+        });
     }
     if (sortBy === "num" && sortOrder === "small-big"){
         data.sort((prev, next)=> {
@@ -42,7 +42,7 @@ orderPokemon: (data, sortBy, sortOrder) => {
                 return -1;
             }
             return 0;
-        })
+        });
     }
     if (sortBy === "num" && sortOrder === "big-small"){
         data.sort((prev, next)=> {
@@ -53,8 +53,17 @@ orderPokemon: (data, sortBy, sortOrder) => {
             return -1;
             }
             return 0;
-        })
+        });
     }
     return data;
- }
+ },
+ computeStats: (data, type) =>{
+    let counter = 0;
+    data.forEach(element =>{
+      if(element.type.indexOf(type) !== -1){
+        counter++; 
+      }
+    })
+    return counter; 
+}
 }
