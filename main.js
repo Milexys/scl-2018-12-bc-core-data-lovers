@@ -1,6 +1,7 @@
 const data = POKEMON.pokemon;
 const container = document.getElementById("root");
 const selectType = document.getElementById("select");
+const selectOrder = document.getElementById("selectOrder");
 
 const showPokemon = (data) =>{
     let card= '';
@@ -37,5 +38,44 @@ selectType.addEventListener("change", () => {
         </div>
     </div>`;
     })
+});
+
+document.getElementById("selectOrder").addEventListener("change", () =>{
+    let sortOrder = document.getElementById("selectOrder").value;
+    let orderResult = orderPokemon(data);
+    if (sortOrder === "az") {
+        container.innerHTML = "";
+        orderResult.forEach(element=>{
+            container.innerHTML +=
+        `<div class="row">
+        <div class="col s12 m6 ">
+            <div class = "card">
+                <h4 class="name">${element.name}</h4>
+                <p class="number">ID: ${element.num}</p>
+                <img class="image" src="${element.img}"/>
+                <div class="Type">${element.type.join('-')}</div>
+            </div>
+        </div>
+    </div>`;
+        });
+    }
+    else if (sortOrder === "za"){
+        container.innerHTML = "";
+        let orderDesc = orderPokemon(data);
+        let orderResult = orderDesc.reverse();
+        orderResult.forEach(element=>{
+            container.innerHTML +=
+        `<div class="row">
+        <div class="col s12 m6 ">
+            <div class = "card">
+                <h4 class="name">${element.name}</h4>
+                <p class="number">ID: ${element.num}</p>
+                <img class="image" src="${element.img}"/>
+                <div class="Type">${element.type.join('-')}</div>
+            </div>
+        </div>
+    </div>`;
+        });
+    }    
 });
 window.onload = showPokemon(data);
