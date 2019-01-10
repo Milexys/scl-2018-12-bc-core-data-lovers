@@ -78,4 +78,12 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
         });
     }    
 });
+
+selectType.addEventListener("change", () => {
+    document.getElementById("counterResult").innerHTML = "";
+    let type = selectType.value;
+    document.getElementById("counterResult").innerHTML = `
+    <p>Existen ${window.pokemones.computeStats(data, type)} pokemones del tipo '${type}' en la región de Kanto </p>`;
+  
+  });
 window.onload = showPokemon(data);
