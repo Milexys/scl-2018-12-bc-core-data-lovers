@@ -2,6 +2,10 @@ const data = window.POKEMON.pokemon;
 const container = document.getElementById("root");
 const selectType = document.getElementById("select");
 
+document.addEventListener('DOMContentLoaded', function() {  
+    window.M.AutoInit();
+  });
+
 const showPokemon = (data) =>{
     let card= '';
     data.forEach(element => { 
