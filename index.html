@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>POKEMON</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
     <body>
       <div class="container">
@@ -12,46 +15,49 @@
           <img class="banner" src="../src/css/Banner Pokemon.png">
         </header>
 
-        <aside class="aside">
-          <div class="menuType">
-          <select id="select" class="select">
-              <option value="0">Seleccionar</option>
-              <option value="Water">Agua</option>
-              <option value="Bug">Bicho</option>
-              <option value="Dragon">Dragón</option>
-              <option value="Electric">Eléctrico</option>
-              <option value="Ghost">Fantasma</option>
-              <option value="Fire">Fuego</option>
-              <option value="Ice">Hielo</option>
-              <option value="Grass">Hierba</option>
-              <option value="Fighting">Luchador</option>
-              <option value="Normal">Normal</option>
-              <option value="Psychic">Psíquico</option>
-              <option value="Rock">Roca</option>
-              <option value="Ground">Tierra</option>
-              <option value="Poison">Veneno</option>
-              <option value="Flying">Volador</option>
-          </select> <br>
-          <select id="selectOrder" class="select">
-              <option value="0">Seleccionar</option>
-              <option value="az">Ordenar A-Z</option>
-              <option value="za">Ordenar Z-A</option>
-              <option value="small-big">Ordenar 1-151</option>
-              <option value="big-small">Ordenar 151-1</option>
-          </select>
-        </div>
-        </aside>
-
-        <article class="article">
-          <div id="counterResult"></div>
-          <div id="root"></div>
-        </article>
+        <section class="section">
+          <div class="row">
+              <div class="input-field col s12 m3">
+                <select id="select" class="select">
+                    <option value="" disabled selected>Seleccionar</option>
+                    <option value="Water">Agua</option>
+                    <option value="Bug">Bicho</option>
+                    <option value="Dragon">Dragón</option>
+                    <option value="Electric">Eléctrico</option>
+                    <option value="Ghost">Fantasma</option>
+                    <option value="Fire">Fuego</option>
+                    <option value="Ice">Hielo</option>
+                    <option value="Grass">Hierba</option>
+                    <option value="Fighting">Luchador</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Psychic">Psíquico</option>
+                    <option value="Rock">Roca</option>
+                    <option value="Ground">Tierra</option>
+                    <option value="Poison">Veneno</option>
+                    <option value="Flying">Volador</option>
+                  </select> 
+                <label>Selecciona un tipo de Pokemon</label>
+              </div>
+            <div class="input-field col s12 m3">
+              <select id="selectOrder" class="select">
+                    <option value="0">Seleccionar</option>
+                    <option value="az">Ordenar A-Z</option>
+                    <option value="za">Ordenar Z-A</option>
+                    <option value="small-big">Ordenar 1-151</option>
+                    <option value="big-small">Ordenar 151-1</option>
+              </select>
+              <label>Selecciona un Orden</label>
+            </div>
+          </div>
+            <div id="counterResult"></div>
+            <div id="root" class="row"></div>
+        </section>
         <footer></footer>
-    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script src="./data/pokemon/pokemon.js"></script>
       <script src="data.js"></script>
       <script src="main.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      
       </div>
   </body>
   
