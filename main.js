@@ -10,14 +10,12 @@ const showPokemon = (data) =>{
     let card= '';
     data.forEach(element => { 
         card = container.innerHTML += 
-        ` <div class="row">
-                <div class="col s12 m6 ">
-                    <div class = "card">
-                        <h4 class="name">${element.name}</h4>
-                        <p class="number">ID: ${element.num}</p>
-                        <img class="responsive-img" src="${element.img}"/>
-                        <div class="Type">${element.type.join('-')}</div>
-                    </div>
+        `   <div class="col s6 m3 ">
+                <div class = "card">
+                    <h5 class="flow-text">${element.name}</h5>
+                    <p class="number">ID: ${element.num}</p>
+                    <img class="responsive-img" src="${element.img}"/>
+                    <div class="Type">${element.type.join('-')}</div>
                 </div>
             </div>`;
         });
@@ -30,16 +28,14 @@ selectType.addEventListener("change", () => {
     container.innerHTML = "";
     filterResult.forEach(element => {
         container.innerHTML +=
-        `<div class="row">
-        <div class="col s12 m6 ">
+        `<div class="col s6 m3">
             <div class = "card">
-                <h4 class="name">${element.name}</h4>
+                <h5 class="flow-text">${element.name}</h5>
                 <p class="number">ID: ${element.num}</p>
                 <img class="responsive-img" src="${element.img}"/>
                 <div class="Type">${element.type.join('-')}</div>
             </div>
-        </div>
-    </div>`;
+        </div>`;
     })
 });
 
@@ -51,16 +47,14 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
         container.innerHTML = "";
         orderResult.forEach(element=>{
             container.innerHTML +=
-        `<div class="row">
-        <div class="col s12 m6 ">
-            <div class = "card">
-                <h4 class="name">${element.name}</h4>
-                <p class="number">ID: ${element.num}</p>
-                <img class="responsive-img" src="${element.img}"/>
-                <div class="Type">${element.type.join('-')}</div>
-            </div>
-        </div>
-    </div>`;
+            `<div class="col s6 m3">
+                <div class = "card">
+                    <h5 class="flow-text">${element.name}</h5>
+                    <p class="number">ID: ${element.num}</p>
+                    <img class="responsive-img" src="${element.img}"/>
+                    <div class="Type">${element.type.join('-')}</div>
+                </div>
+            </div>`;
         });
     }
     else if (sortOrder === "small-big" || sortOrder === "big-small"){
@@ -69,16 +63,14 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
         container.innerHTML = "";
         orderResult.forEach(element=>{
             container.innerHTML +=
-        `<div class="row">
-        <div class="col s12 m6 ">
-            <div class = "card">
-                <h4 class="name">${element.name}</h4>
-                <p class="number">ID: ${element.num}</p>
-                <img class="responsive-img" src="${element.img}"/>
-                <div class="Type">${element.type.join('-')}</div>
-            </div>
-        </div>
-    </div>`;
+            `<div class="col s6 m3">
+                <div class = "card">
+                    <h5 class="flow-text">${element.name}</h5>
+                    <p class="number">ID: ${element.num}</p>
+                    <img class="responsive-img" src="${element.img}"/>
+                    <div class="Type">${element.type.join('-')}</div>
+                </div>
+            </div>`;
         });
     }    
 });
