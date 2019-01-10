@@ -39,3 +39,11 @@ describe('orderPokemon', () => {
     expect(window.pokemones.orderPokemon(data, "num", "big-small")[0].num).toEqual('151');
   });
 });
+describe('computeStats', () => {
+  it('it should be a function', ()=> {
+    expect(typeof window.pokemones.computeStats).toBe('function');
+  });
+  it('it should return 32 as the sum of all Water type pokemons', () => {
+    expect(window.pokemones.computeStats(data, 'Water')).toEqual(32);
+  });
+});
