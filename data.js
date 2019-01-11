@@ -32,7 +32,7 @@ orderPokemon: (data, sortBy, sortOrder) => {
             return 0;
         });
     }
-    if (sortBy === "num" && sortOrder === "small-big")
+    if (sortBy === "num" && sortOrder === "small-big"){
         data.sort((prev, next)=> {
             if (prev.id > next.id) {
             return 1;
@@ -50,10 +50,12 @@ orderPokemon: (data, sortBy, sortOrder) => {
             }
             if (prev.id > next.id) {
             return -1;
-
-        }
-        else return 0;
-    });
+            }
+            return 0;
+        });
+    }
+    return data;
+ },
  computeStats: (data, type) =>{
     let counter = 0;
     data.forEach(element =>{
