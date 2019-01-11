@@ -9,15 +9,123 @@ document.addEventListener('DOMContentLoaded', function() {
 const showPokemon = (data) =>{
     let card= '';
     data.forEach(element => { 
-        card = container.innerHTML += 
-        `   <div class="col s6 m3 ">
-                <div class = "card">
-                    <h5 class="flow-text">${element.name}</h5>
-                    <p class="number">ID: ${element.num}</p>
-                    <img class="responsive-img" src="${element.img}"/>
-                    <div class="Type">${element.type.join('-')}</div>
-                </div>
-            </div>`;
+        if (element.weaknesses[1] === undefined && element.type[1] === undefined){
+            card = container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                    <tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        } else if (element.weaknesses[1]=== undefined && element.type[1] !== undefined){
+            card = container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>${element.type[1]}</td>
+                                    <td></td>
+                                </tr>
+                                    <tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        } else if (element.weaknesses[1]!== undefined && element.type[1] === undefined){
+            card = container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>-</td>
+                                    <td>${element.weaknesses[1]}</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        } else {
+            card = container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>${element.type[1]}</td>
+                                    <td>${element.weaknesses[1]}</td>
+                                </tr>
+                                    <tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        }
         });
     return card;
 }
@@ -27,15 +135,123 @@ selectType.addEventListener("change", () => {
     let filterResult = window.pokemones.filterPokemon(data, condition);
     container.innerHTML = "";
     filterResult.forEach(element => {
-        container.innerHTML +=
-        `<div class="col s6 m3">
-            <div class = "card">
-                <h5 class="flow-text">${element.name}</h5>
-                <p class="number">ID: ${element.num}</p>
-                <img class="responsive-img" src="${element.img}"/>
-                <div class="Type">${element.type.join('-')}</div>
-            </div>
-        </div>`;
+        if (element.weaknesses[1] === undefined && element.type[1] === undefined){
+        container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                    <tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        } else if (element.weaknesses[1]=== undefined && element.type[1] !== undefined){
+            container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>${element.type[1]}</td>
+                                    <td></td>
+                                </tr>
+                                    <tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        } else if (element.weaknesses[1]!== undefined && element.type[1] === undefined){
+            container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>-</td>
+                                    <td>${element.weaknesses[1]}</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        } else {
+            container.innerHTML += 
+            `   <div class="col s12 m3 ">
+                    <div class = "card">
+                        <h5 class="flow-text">${element.name}</h5>
+                        <p class="number">ID: ${element.num}</p>
+                        <img class="responsive-img" src="${element.img}"/>
+                        <div class="table">
+                            <table class="responsive-table centered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Debilidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${element.type[0]}</td>
+                                        <td>${element.weaknesses[0]}</td>
+                                    </tr>
+                                    <td>${element.type[1]}</td>
+                                    <td>${element.weaknesses[1]}</td>
+                                </tr>
+                                    <tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`;
+        }
     })
 });
 
@@ -46,15 +262,123 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
         let orderResult = window.pokemones.orderPokemon(data, sortBy, sortOrder);
         container.innerHTML = "";
         orderResult.forEach(element=>{
-            container.innerHTML +=
-            `<div class="col s6 m3">
-                <div class = "card">
-                    <h5 class="flow-text">${element.name}</h5>
-                    <p class="number">ID: ${element.num}</p>
-                    <img class="responsive-img" src="${element.img}"/>
-                    <div class="Type">${element.type.join('-')}</div>
-                </div>
-            </div>`;
+            if (element.weaknesses[1] === undefined && element.type[1] === undefined){
+                container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                            <tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                } else if (element.weaknesses[1]=== undefined && element.type[1] !== undefined){
+                    container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>${element.type[1]}</td>
+                                            <td></td>
+                                        </tr>
+                                            <tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                } else if (element.weaknesses[1]!== undefined && element.type[1] === undefined){
+                    container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>-</td>
+                                            <td>${element.weaknesses[1]}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                } else {
+                    container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>${element.type[1]}</td>
+                                            <td>${element.weaknesses[1]}</td>
+                                        </tr>
+                                            <tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                }
         });
     }
     else if (sortOrder === "small-big" || sortOrder === "big-small"){
@@ -62,15 +386,123 @@ document.getElementById("selectOrder").addEventListener("change", () =>{
         let orderResult = window.pokemones.orderPokemon(data, sortBy, sortOrder);
         container.innerHTML = "";
         orderResult.forEach(element=>{
-            container.innerHTML +=
-            `<div class="col s6 m3">
-                <div class = "card">
-                    <h5 class="flow-text">${element.name}</h5>
-                    <p class="number">ID: ${element.num}</p>
-                    <img class="responsive-img" src="${element.img}"/>
-                    <div class="Type">${element.type.join('-')}</div>
-                </div>
-            </div>`;
+            if (element.weaknesses[1] === undefined && element.type[1] === undefined){
+                container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                            <tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                } else if (element.weaknesses[1]=== undefined && element.type[1] !== undefined){
+                    container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>${element.type[1]}</td>
+                                            <td></td>
+                                        </tr>
+                                            <tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                } else if (element.weaknesses[1]!== undefined && element.type[1] === undefined){
+                    container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>-</td>
+                                            <td>${element.weaknesses[1]}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                } else {
+                    container.innerHTML += 
+                    `   <div class="col s12 m3 ">
+                            <div class = "card">
+                                <h5 class="flow-text">${element.name}</h5>
+                                <p class="number">ID: ${element.num}</p>
+                                <img class="responsive-img" src="${element.img}"/>
+                                <div class="table">
+                                    <table class="responsive-table centered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Debilidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${element.type[0]}</td>
+                                                <td>${element.weaknesses[0]}</td>
+                                            </tr>
+                                            <td>${element.type[1]}</td>
+                                            <td>${element.weaknesses[1]}</td>
+                                        </tr>
+                                            <tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>`;
+                }
         });
     }    
 });
