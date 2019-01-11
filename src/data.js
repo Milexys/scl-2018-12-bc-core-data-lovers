@@ -1,8 +1,7 @@
 window.pokemones ={
 filterPokemon: (data , condition) => {
     if (condition === "0") {
-        return data;
-        
+        return data; 
     }
     const filteredPokemons  = data.filter(element => {
         if (element.type[0] === condition) return element.type[0] === condition;
