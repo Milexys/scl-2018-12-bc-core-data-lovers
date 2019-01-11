@@ -56,6 +56,7 @@ orderPokemon: (data, sortBy, sortOrder) => {
     }
     return data;
  },
+ //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  computeStats: (data, type) =>{
     let counter = 0;
     data.forEach(element =>{
