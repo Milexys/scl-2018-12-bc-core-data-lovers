@@ -50,6 +50,12 @@ orderPokemon: (data, sortBy, sortOrder) => {
             }
             if (prev.id > next.id) {
             return -1;
+
+        }
+        else return 0;
+    });
+    return orderedPokemon;
+};
             }
             return 0;
         });
