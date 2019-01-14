@@ -86,4 +86,4 @@ Prototipo de Alta Fidelidad Figma
     d) No se entendía el filtro.
 
 ## Planificación del Proyecto
-    Se realizó una planificación del trabajo mediante la herramienta Trello que se puede visualizar en el siguinte link: https://trello.com/b/Kmc9czg4/data-lovers.
+    Se realizó una planificación del trabajo mediante la herramienta Trello que se puede visualizar en el siguinte link: https://trello.com/b/Kmc9czg4/data-lovers
