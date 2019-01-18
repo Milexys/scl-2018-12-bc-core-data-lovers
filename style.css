@@ -16,10 +16,10 @@ body{
 .card{
     text-align: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 250px;
     
 }
 .card p{
-    text-align: left;
     margin: 0; 
 }
 .card h5{ 
@@ -28,4 +28,51 @@ body{
     padding: 2px;
     margin: 0;
     background: rgba(105, 255, 102, 0.719257);
+}
+.card h6{ 
+    width: 100%;
+    height: auto;
+    padding: 2px;
+   
+    background: rgb(227, 255, 102);
+}
+.flip-container {
+    perspective: 1000px;
+}
+    /* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+.front{
+    position: absolute;
+}
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+}
+.btn{
+    background-color: green;
+    border-radius: 15px;
+}
+.modal{
+    width: 70%;
+    height: 70%;
 }
